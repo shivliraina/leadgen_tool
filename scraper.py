@@ -1,7 +1,9 @@
 import pandas as pd
 import requests
-
-HUNTER_API_KEY = "212cede95ac48e5af7ed69b4216634d9a76f1c69"  # Replace with your real key
+import os
+from dotenv import load_dotenv
+load_dotenv()
+HUNTER_API_KEY = os.getenv("HUNTER_API_KEY")
 
 def get_email_from_hunter(domain):
     url = f"https://api.hunter.io/v2/domain-search?domain={domain}&api_key={HUNTER_API_KEY}"
